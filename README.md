@@ -6,7 +6,7 @@ Small Project to Run Rules in Gmail
 Download tar or directly install using git url
 
 ## Direct Install
-Execute command `pip install https://github.com/prabhakaran1021/gmail_rule_runner/`
+Execute command `pip install git+https://github.com/prabhakaran1021/gmail_rule_runner.git`
 
 ### Video Example:
 
