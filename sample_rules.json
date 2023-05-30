@@ -1,0 +1,26 @@
+{
+   "rules_name_goes_here":{
+      "conditions":[
+         {
+            "field":"From",
+            "predicate":"contains",
+            "value":"info@naukri.com"
+         },
+         {
+            "field":"Subject",
+            "predicate":"contains",
+            "value":"job"
+         },
+         {
+            "field":"Date",
+            "predicate":"less",
+         "value":"26-05-2023"
+         }
+      ],
+      "actions":{
+         "mark_read":"",
+         "move_to_folder":"testfolder"
+      },
+      "rule_predicate": "all"
+   }
+}

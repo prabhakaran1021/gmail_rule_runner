@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "properties": {
+    "rules_name_goes_here": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "predicate": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "field",
+                "predicate",
+                "value"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "predicate": {
+                  "type": "string",
+                  "enum": ["contains","equals","less","greater","between"]
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "field",
+                "predicate",
+                "value"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "predicate": {
+                  "type": "string",
+                  "enum": ["contains","equals","less","greater","between"]
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "field",
+                "predicate",
+                "value"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "type": "object",
+          "properties": {
+            "mark_read": {
+              "type": "string"
+            },
+            "move_to_folder": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "mark_read",
+            "move_to_folder"
+          ]
+        },
+        "rule_predicate": {
+          "type": "string",
+          "enum": ["any","all"]
+        }
+      },
+      "required": [
+        "conditions",
+        "actions",
+        "rule_predicate"
+      ]
+    }
+  },
+  "required": [
+    "rules_name_goes_here"
+  ]
+}
