@@ -26,5 +26,7 @@ Authentication is required only for first call.If successful. Token is saved in 
 
 ## Video Tutorial
 
+### Note: 
+All actions are done in a batch of 100 to avoid gmail api limit exception
 
 
