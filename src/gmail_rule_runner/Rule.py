@@ -87,18 +87,18 @@ class Rule:
                 else:
                     if condition.predicate == "less":
                         condition_checks.append(
-                            datetime.strptime(condition.value[:20], "%d-%m-%Y").date() < field_data.date())
+                            datetime.strptime(condition.value[:20], "%d-%m-%Y").date() > field_data.date())
                     if condition.predicate == "equal":
                         condition_checks.append(
-                            datetime.strptime(condition.value[:20], "%d-%m-%Y").date() < field_data.date())
+                            datetime.strptime(condition.value[:20], "%d-%m-%Y").date() == field_data.date())
                     if condition.predicate == "greater":
                         condition_checks.append(
                             datetime.strptime(condition.value[:20], "%d-%m-%Y").date() < field_data.date())
                     if condition.predicate == "between":
                         from_date, to_date = json.loads(condition.value)
                         condition_checks.append(
-                            datetime.strptime(from_date, "%d-%m-%Y").date() <= field_data.date() and datetime.strptime(
-                                to_date, "%d-%m-%Y").date() <= field_data.date())
+                            datetime.strptime(from_date, "%d-%m-%Y").date() <= field_data.date() <= datetime.strptime(
+                                to_date, "%d-%m-%Y").date())
             if self.rule_predicate == 'all':
                 if all(condition_checks):
                     self.filtered_mails.append(response['id'])
