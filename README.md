@@ -19,7 +19,9 @@ Execute command `pip install git+https://github.com/prabhakaran1021/gmail_rule_r
 
 ### Video Example:
 
-
+## AUTH
+Authenticated using oauth2 credentials generated from Google Cloud Console. Download the credentials file and save as json file.<br>
+Authentication is required only for first call.If successful. Token is saved in a pickle file which can be reused till it is expired.Auth tokens are refreshed if they are expired.
 # How to Use:
 
 ## Video Tutorial
