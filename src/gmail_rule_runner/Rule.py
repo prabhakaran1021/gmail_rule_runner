@@ -53,12 +53,9 @@ class Rule:
                         date = datetime.strptime(date[:20],
                                                  '%d %b %Y %H:%M:%S')  # convert final date and time to python datetime
                     except:
-                        traceback.print_exc()
-                        try:
-                            date = datetime.strptime(date[:20],
-                                                     '%d %b %y %H:%M:%S')
-                        except:
-                            print(date)
+                        date = datetime.strptime(date[:20],
+                                                 '%d %b %y %H:%M:%S')
+
                     return date
                 return data['value']
 
@@ -138,7 +135,7 @@ class Rule:
     """
 
         message_body = {}
-        type_list=[]
+        type_list = []
         for action in self.actions:
             type_list.append(action.type)
         batch = self.service.new_batch_http_request()
@@ -149,7 +146,6 @@ class Rule:
             message_body['addLabelIds'] = [label]
         for message in self.filtered_mails:
             batch.add(self.service.users().messages().modify(userId='me', id=message, body=message_body))
-        print(self.filtered_mails)
         batch.execute()
         self.filtered_mails = []
 
@@ -168,7 +164,6 @@ class Rule:
         count = 1
         while all_mail_req:
             all_mails = all_mail_req.execute()
-            print(f"Iteration No: {count}")
             batch = self.service.new_batch_http_request()
             for mail in all_mails['messages']:
                 batch.add(self.service.users().messages().get(userId="me", id=mail["id"]), callback=self.execute_rule)
@@ -176,5 +171,3 @@ class Rule:
             all_mail_req = messages_api.list_next(all_mail_req, all_mails)
             count += 1
             self.execute_actions()
-
-
