@@ -1,6 +1,6 @@
 from googleapiclient.discovery import build
 
-from src import gmail_rule_runner
+import gmail_rule_runner
 
 gmail_rule_runner.credentials_path= "credentials.json"
 gmail_rule_runner.secrets_path= "secrets.pickle"

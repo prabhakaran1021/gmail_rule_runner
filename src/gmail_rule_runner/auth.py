@@ -4,7 +4,7 @@ import pickle
 from google.auth.transport import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-from src import gmail_rule_runner
+import gmail_rule_runner
 
 SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly',
