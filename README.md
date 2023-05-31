@@ -1,7 +1,18 @@
 # gmail_rule_runner
 Small Project to Run Rules in Gmail
 
-
+<!-- TOC -->
+* [gmail_rule_runner](#gmailrulerunner)
+* [**Installation**](#installation)
+  * [Direct Install](#direct-install)
+    * [Video Example:](#video-example-)
+  * [Download Tar](#download-tar)
+    * [Video Example:](#video-example--1)
+  * [AUTH](#auth)
+* [How to Use:](#how-to-use-)
+  * [Video Tutorial](#video-tutorial)
+    * [Note:](#note-)
+<!-- TOC -->
 # **Installation**
 Download tar or directly install using git url
 
